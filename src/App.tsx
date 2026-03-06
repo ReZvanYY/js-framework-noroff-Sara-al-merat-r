@@ -6,9 +6,11 @@ import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import ContactPage from "./pages/ContactPage";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -20,6 +22,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </CartProvider>
   );
 }
 
