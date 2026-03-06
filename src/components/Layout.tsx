@@ -1,6 +1,10 @@
 import { Outlet, Link } from 'react-router-dom';
+import { useCart } from '../hooks/useCart';
+
 
 function Layout() {
+  const { itemCount } = useCart();
+  
   return (
     <div className="min-h-screen flex flex-col bg-[#f8f5e6] font-serif text-gray-800">
       
@@ -25,7 +29,7 @@ function Layout() {
             </li>
             <li>
               <Link to="/cart" className="hover:bg-orange-200/20 px-2 py-1 rounded-md transition-all -rotate-1 inline-block hover:rotate-0">
-                Cart (0)
+                Cart ({itemCount})
               </Link>
             </li>
           </ul>
