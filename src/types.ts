@@ -41,3 +41,7 @@ export interface SingleProductResponse {
   data: Product;
   meta: Record<string, unknown>;
 }
+
+export interface CartItem extends Product {
+  quantity: number;
+}
